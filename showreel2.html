@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cybernetics 機控全城 | 模型展示</title>
+				<title>Cybernetics 機控全城</title>
+		<link rel="icon" href="images/icon_v1.ico" type="image/ico" />
+    	<script src="TemplateData/UnityProgress.js"></script>
+
+		<!-- Facebook meta tag -->
+		<meta property="og:image" content="http://www.cybernetics-game.com/images/FacebookBanner.jpg"/>
+		<meta property="og:description" content="〈學生獨立製作 × 3D 動作解謎遊戲〉人類以大地之母的形象創造了管理城市的機器人-蓋亞，然而在啟動的同時蓋亞卻失控了，為了阻止失控的蓋亞，女主角-緹娜踏上了旅程" />
+		<!-- Facebook meta tag END -->
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Cybernetics 機控全城 , Cybernetics The Game" />
+		<meta name="keywords" content="Cybernetics , 機控全城 , 獨立製作 , Indie game" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollex.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+		<noscript>
+			<link rel="stylesheet" href="stylesheets/skel.css" />
+			<link rel="stylesheet" href="stylesheets/style.css" />
+			<link rel="stylesheet" href="stylesheets/style-xlarge.css" />
+		</noscript>
+		
+		<!--FancyBoxStart-->
+		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<!--FancyBoxEnd-->
+		<!-- Showreel Ctrl-->
+		<script src="js/jquery.url.min.js"></script>
+		<script type="text/javascript">
+			function modelReplace(num) {
+				SendMessage("Controller", "ChangeModle", num);
+			};
+			function modelReplaceURL() {
+				SendMessage("Controller", "ChangeModle", $.url.param("MD"));
+			}
+			function aniPause() {
+				SendMessage("Controller", "AnimationBool");
+				SendMessage("Main", "setPause");
+
+			}
+			function aniNext() {
+				SendMessage("Controller", "ChangeAnimationNext");
+			}
+			function aniPrevious() {
+				SendMessage("Controller", "ChangeAnimationPrevious");
+			}
+
+		</script>
+		<!-- Showreel Ctrl END-->
+		
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html"></a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a target="_blank" href="https://www.facebook.com/Cybernetics.the.game"><i class="fa fa-facebook-square"></i> FB</a></li>
+						<li><a href="http://cybernetics-game.com"><i class="fa fa-home"></i> 首頁</a></li>
+						<li>
+							<a href=""><i class="fa fa-bars"></i> 選單</a>
+							<ul>
+								<li><a href="spotlight">遊戲介紹</a></li>
+								<li><a href="spotlight#story">遊戲故事</a></li>
+								<li>
+									<a href="spotlight#focus">遊戲特色</a>
+									<ul>
+										<li><a href="spotlight#wps">武器系統</a></li>
+										<li><a href="spotlight#2p">雙角色操作</a></li>
+										<li><a href="spotlight#brain">解謎要素</a></li>
+									</ul>
+								</li>
+								<li><a href="showreel">模型展示</a></li>
+								<li><a href="index#four" class="scrolly">開發中畫面</a></li>
+								
+							</ul>
+						</li>
+						
+						<li><a href="http://www.webackers.com/Proposal/Display/129" target="_blank" class="button special">
+							
+								<img src="images/wb_logo.png" style="height: 1.5em; padding-top: 6px;"> 	群募中  
+								
+							</a>
+						</li>
+						
+					</ul>
+				</nav>
+			</header>
+
+
+		<!-- Main -->
+
+			<div id="main" class="wrapper style1">
+				<div class="container">
+					<header class="major">
+						<h2><i class="fa fa-street-view"></i> 模型展示</h2>
+					</header>
+
+					<!-- Content -->
+						<section id="content">
+							
+							<!-- Unity -->
+
+							<div style="margin:0 0 -40px 0;">
+							<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+								<div style="margin: 0 auto; text-align: center;position:relative;top:-90px;">
+									<button class="button uEdit" onclick="aniPause()">播放/暫停動畫</button>
+									<button class="button uEdit" onclick="aniNext()">上一個動畫</button>
+									<button class="button uEdit" onclick="aniPrevious()">下一個動畫</button>
+									<P style="margin: 0.5em 0px 0em;">
+									<button class="button uEdit" onclick="modelReplace(4)">巡邏機器人</button>
+									<button class="button uEdit" onclick="modelReplace(0)">衝撞者</button>
+									<button class="button uEdit" onclick="modelReplace(1)">龐克頭</button>
+									<button class="button uEdit" onclick="modelReplace(2)">緹娜</button>
+									<button class="button uEdit" onclick="modelReplace(3)">蓋亞</button>
+									<button class="button uEdit" onclick="modelReplace(5)">武器 槍</button>
+									<button class="button uEdit" onclick="modelReplace(6)">武器 槌</button>
+								</div>
+							</div>
+
+
+
+<div class="template-wrap clear">
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="720px" width="1280px"></canvas>
+</div>
+    <script type='text/javascript'>
+  // connect to canvas
+  var Module = {
+    filePackagePrefixURL: "Release/",
+    memoryInitializerPrefixURL: "Release/",
+    preRun: [],
+    postRun: [],
+    print: (function() {
+      return function(text) {
+        console.log (text);
+      };
+    })(),
+    printErr: function(text) {
+      console.error (text);
+    },
+    canvas: document.getElementById('canvas'),
+    progress: null,
+    setStatus: function(text) {
+      if (this.progress == null) 
+      {
+        if (typeof UnityProgress != 'function')
+          return;
+        this.progress = new UnityProgress (canvas);
+      }
+      if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+      if (text === Module.setStatus.text) return;
+      this.progress.SetMessage (text);
+      var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+      if (m)
+        this.progress.SetProgress (parseInt(m[2])/parseInt(m[4]));
+      if (text === "") 
+        this.progress.Clear()
+    },
+    totalDependencies: 0,
+    monitorRunDependencies: function(left) {
+      this.totalDependencies = Math.max(this.totalDependencies, left);
+      Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+    }
+  };
+  Module.setStatus('Downloading (0.0/1)');
+</script>
+<script src="Release/UnityConfig.js"></script>
+<script src="Release/fileloader.js"></script>
+<script>if (!(!Math.fround)) {
+  var script = document.createElement('script');
+  script.src = "Release/showreel_unity.js";
+  document.body.appendChild(script);
+} else {
+  var codeXHR = new XMLHttpRequest();
+  codeXHR.open('GET', 'Release/showreel_unity.js', true);
+  codeXHR.onload = function() {
+    var code = codeXHR.responseText;
+    if (!Math.fround) { 
+try {
+  console.log('optimizing out Math.fround calls');
+  var m = /var ([^=]+)=global\.Math\.fround;/.exec(code);
+  var minified = m[1];
+  if (!minified) throw 'fail';
+  var startAsm = code.indexOf('// EMSCRIPTEN_START_FUNCS');
+  var endAsm = code.indexOf('// EMSCRIPTEN_END_FUNCS');
+  var asm = code.substring(startAsm, endAsm);
+  do {
+    var moar = false; // we need to re-do, as x(x( will not be fixed
+    asm = asm.replace(new RegExp('[^a-zA-Z0-9\\$\\_]' + minified + '\\(', 'g'), function(s) { moar = true; return s[0] + '(' });
+  } while (moar);
+  code = code.substring(0, startAsm) + asm + code.substring(endAsm);
+  code = code.replace("'use asm'", "'almost asm'");
+} catch(e) { console.log('failed to optimize out Math.fround calls ' + e) }
+ }
+
+    var blob = new Blob([code], { type: 'text/javascript' });
+    codeXHR = null;
+    var src = URL.createObjectURL(blob);
+    var script = document.createElement('script');
+    script.src = URL.createObjectURL(blob);
+    script.onload = function() {
+      URL.revokeObjectURL(script.src);
+    };
+    document.body.appendChild(script);
+  };
+  codeXHR.send(null);
+}
+</script>
+
+
+
+
+
+
+							<div class="align-center">
+								<h3><i class="fa fa-question-circle"></i> 操作說明</h3>
+								<p>左鍵拖曳：旋轉  /  中鍵拖曳：平移  /  右鍵拖曳：放大縮小</p>
+								<p>( 切換動畫後，需要等待當前動畫播放完畢 )</p>
+							</div>
+						</section>
+
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<!-- Five -->
+		
+			<section id="five" class="wrapper style2 special fade">
+				<div class="container">
+					<header>
+						<h2><i class="fa fa-slideshare"></i> 群眾募資中</h2>
+						<p>有你的支持我們能做得更好</p>
+						<img src="images/webaker.png">
+
+					</header>
+					<ul class="actions" style="padding-top:20px;">
+							<li><a href="http://www.webackers.com/Proposal/Display/129" target="_blank" class="button">前往贊助頁</a></li>
+						</ul>
+					
+				</div>
+			</section>
+
+<!-- Footer -->
+			<footer id="footer">
+				<header class="major">
+					<h2><i class="fa fa-facebook-square"></i> 追蹤我們的 Facebook</h2> 
+					<p>歡迎按讚以獲得最新的資訊</p>
+					<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FCybernetics.the.game&amp;width&amp;height=258&amp;colorscheme=dark&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowTransparency="true"></iframe>
+					<p></p>
+				</header>
+				<ul class="copyright">
+					<li>&copy; Cybernetics 機控全城. All rights reserved.</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a> & <a href="http://www.cloud-macaca.com" target="_blank">CloudMacaca</a></li>
+				</ul>
+			</footer>
+
+	</body>
+</html>

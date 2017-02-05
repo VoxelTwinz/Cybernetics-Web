@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cybernetics 機控全城 | 模型展示</title>
+		<%= render :partial => "/head" %>
+		<!--FancyBoxStart-->
+		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<!--FancyBoxEnd-->
+		<!-- Showreel Ctrl-->
+		<script src="js/jquery.url.min.js"></script>
+		<script type="text/javascript">
+			function modelReplace(num) {
+				SendMessage("Controller", "ChangeModle", num);
+			};
+			function modelReplaceURL() {
+				SendMessage("Controller", "ChangeModle", $.url.param("MD"));
+			}
+			function aniPause() {
+				SendMessage("Controller", "AnimationBool");
+				SendMessage("Main", "setPause");
+
+			}
+			function aniNext() {
+				SendMessage("Controller", "ChangeAnimationNext");
+			}
+			function aniPrevious() {
+				SendMessage("Controller", "ChangeAnimationPrevious");
+			}
+
+		</script>
+		<!-- Showreel Ctrl END-->
+		
+		<!-- Unity -->
+	    <script src="Release/UnityProgress.js"></script>
+	    <script src="Release/UnityConfig.js"></script>
+	    <style>
+		      .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; width: 100%;height: auto;}
+		      textarea.emscripten { font-family: monospace; width: 80%; }
+		      div.emscripten { text-align: center; }
+		      canvas.emscripten { border: 0px none; }
+		      .uEdit{
+		      	line-height: 2em;
+		      	height: 2em;
+		      	background-color: rgba(0,0,0,0.2);
+		      	padding: 0 1em 0 1em;
+		      }
+		      .uEdit:hover{
+		      	content: ""
+		      }
+		      .showButtonBox{
+		      	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.33) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.33))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.33) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.33) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.33) 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.33) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#54000000',GradientType=0 ); /* IE6-9 */
+		      }
+	    </style>
+		<!-- Unity END -->
+
+		
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<%= render :template => "/_menu" %>
+
+		<!-- Main -->
+
+			<div id="main" class="wrapper style1">
+				<div class="container">
+					<header class="major">
+						<h2>模型展示</h2>
+					</header>
+
+					<!-- Content -->
+						<section id="content">
+							
+							<!-- Unity -->
+
+							<div style="margin:0 0 -40px 0;">
+
+							<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+							</canvas>
+								<div style="margin: 0 auto; text-align: center;position:relative;top:-90px;">
+									<button class="button uEdit" onclick="aniPause()">播放/暫停動畫</button>
+									<button class="button uEdit" onclick="aniNext()">上一個動畫</button>
+									<button class="button uEdit" onclick="aniPrevious()">下一個動畫</button>
+									<P style="margin: 0.5em 0px 0em;">
+									<button class="button uEdit" onclick="modelReplace(4)">巡邏機器人</button>
+									<button class="button uEdit" onclick="modelReplace(0)">衝撞者</button>
+									<button class="button uEdit" onclick="modelReplace(1)">龐克頭</button>
+									<button class="button uEdit" onclick="modelReplace(2)">緹娜</button>
+									<button class="button uEdit" onclick="modelReplace(3)">蓋亞</button>
+									<button class="button uEdit" onclick="modelReplace(5)">武器 槍</button>
+									<button class="button uEdit" onclick="modelReplace(6)">武器 槌</button>
+								</div>
+							</div>
+						   <script type='text/javascript'>
+      // connect to canvas
+      var Module = {
+        filePackagePrefixURL: "Release/",
+        memoryInitializerPrefixURL: "Release/",
+        preRun: [],
+        postRun: [],
+        print: (function() {
+          return function(text) {
+            console.log (text);
+          };
+        })(),
+        printErr: function(text) {
+          console.error (text);
+        },
+        canvas: document.getElementById('canvas'),
+        progress: null,
+        setStatus: function(text) {
+          if (this.progress == null) 
+          {
+            if (typeof UnityProgress != 'function')
+              return;
+            this.progress = new UnityProgress (canvas, {
+              logoimage: "Release/progresslogo.png",
+              progressframeimage: "Release/loadingbar.png",
+              progressbarimage: "Release/fullbar.png",
+              backgroundcolor: "1c1d26",
+            });
+          }
+          if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+          if (text === Module.setStatus.text) return;
+          this.progress.SetMessage (text);
+          var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+          if (m)
+            this.progress.SetProgress (parseInt(m[2])/parseInt(m[4]));
+          if (text === "") 
+            this.progress.Clear()
+        },
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {
+          this.totalDependencies = Math.max(this.totalDependencies, left);
+          Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+        }
+      };
+      Module.setStatus('Downloading (0.0/1)');
+    </script>
+    <script src="Release/fileloader.js"></script>
+    <script>if (!(!Math.fround)) {
+  var script = document.createElement('script');
+  script.src = "Release/showreel_unity.js";
+  document.body.appendChild(script);
+} else {
+  var codeXHR = new XMLHttpRequest();
+  codeXHR.open('GET', 'Release/showreel_unity.js', true);
+  codeXHR.onload = function() {
+    var code = codeXHR.responseText;
+    if (!Math.fround) { 
+console.log('optimizing out Math.fround calls');
+code = code.replace(/Math_fround\(/g, '(').replace("'use asm'", "'almost asm'")
+ }
+
+    var blob = new Blob([code], { type: 'text/javascript' });
+    codeXHR = null;
+    var src = URL.createObjectURL(blob);
+    var script = document.createElement('script');
+    script.src = URL.createObjectURL(blob);
+    script.onload = function() {
+      URL.revokeObjectURL(script.src);
+    };
+    document.body.appendChild(script);
+  };
+  codeXHR.send(null);
+}
+</script>
+							<!-- Unity END-->
+							<div class="align-center">
+								<h3><i class="fa fa-question-circle"></i> 操作說明</h3>
+								<p>左鍵拖曳：旋轉  /  中鍵拖曳：平移  /  右鍵拖曳：放大縮小</p>
+								<p>( 切換動畫後，需要等待當前動畫播放完畢 )</p>
+							</div>
+						</section>
+
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<%= render :template => "/_footer" %>
+
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Cybernetics 機控全城</title>
+		<link rel="icon" href="images/icon_v1.ico" type="image/ico" />
+		<!-- Facebook meta tag -->
+		<meta property="og:image" content="http://cybernetics-game.com/images/FacebookBanner.jpg"/>
+		<meta property="og:description" content="〈學生獨立製作 × 3D 動作解謎遊戲〉人類以大地之母的形象創造了管理城市的機器人-蓋亞，然而在啟動的同時蓋亞卻失控了，為了阻止失控的蓋亞，女主角-緹娜踏上了旅程" />
+		<!-- Facebook meta tag END -->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollex.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html"></a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html"><i class="fa fa-facebook-square"></i> FB</a></li>
+						<li><a href="index.html"><i class="fa fa-home"></i> 首頁</a></li>
+						<li>
+							<a href=""><i class="fa fa-bars"></i> 選單</a>
+							<ul>
+								<li>
+									<a href="coming.html">遊戲特色</a>
+									<ul>
+										<li><a href="coming.html">武器系統</a></li>
+										<li><a href="coming.html">雙角色操作</a></li>
+										<li><a href="coming.html">解謎要素</a></li>
+									</ul>
+								</li>
+								<li><a href="coming.html">模型展示</a></li>
+								<li><a href="coming.html">遊戲故事</a></li>
+								<li><a href="#four" class="scrolly">開發中畫面</a></li>
+								
+							</ul>
+						</li>
+						<!--
+						<li><a href="#" class="button special">★ 群募中  </a></li>
+						-->
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<div id="main" class="wrapper style1">
+				<div class="container">
+					<header class="major">
+						<i class="fa fa-exclamation-circle" style="font-size: 10em;"></i>
+						<h2>噢哦! 遇到了甚麼問題..</h2>
+						<section id="content" class="align-center">
+							<p></p>
+							<p>找不到網頁 (HTTP 404)</p>
+						</section>
+					</header>
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<header class="major">
+					<h2><i class="fa fa-facebook-official"></i> 追蹤我們的 Facebook</h2> 
+					<p>歡迎按讚以獲得最新的資訊</p>
+					<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FCybernetics.the.game&amp;width&amp;height=258&amp;colorscheme=dark&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowTransparency="true"></iframe>
+					<p></p>
+				</header>
+				<ul class="copyright">
+					<li>&copy; Cybernetics 機控全城. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> & <a href="http://www.cloud-macaca.com">CloudMacaca</a></li>
+				</ul>
+			</footer>
+
+	</body>
+</html>

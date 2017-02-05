@@ -1,0 +1,133 @@
+/*
+	Landed by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+/* Basic */
+/* line 15, ../sass/style-medium.scss */
+body, input, select, textarea {
+  font-size: 12pt;
+}
+
+/* line 18, ../sass/style-medium.scss */
+.intro_icon {
+  margin: 0 auto;
+  width: 10em;
+  opacity: 0.8;
+  display: block;
+}
+
+/* line 24, ../sass/style-medium.scss */
+.gameinfo {
+  width: 100%;
+  display: table;
+}
+
+/* line 30, ../sass/style-medium.scss */
+.focustable .leftcontent {
+  display: block;
+  width: 100%;
+  margin-right: 0%;
+  float: none;
+}
+/* line 35, ../sass/style-medium.scss */
+.focustable .leftcontent img {
+  padding-top: 0em;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  width: 10em;
+  opacity: 0.8;
+}
+/* line 44, ../sass/style-medium.scss */
+.focustable .rightcontent {
+  display: block;
+  width: 100%;
+}
+
+/* Spotlight */
+/* line 53, ../sass/style-medium.scss */
+.spotlight {
+  background-attachment: scroll;
+  height: auto;
+}
+/* line 57, ../sass/style-medium.scss */
+.spotlight .image.main {
+  display: block;
+  margin: 0;
+  max-height: 100vh;
+  overflow: hidden;
+}
+/* line 64, ../sass/style-medium.scss */
+.spotlight .content {
+  background-color: #1c1d26;
+  border-width: 0 !important;
+  border-top-width: 0.35em !important;
+  bottom: auto !important;
+  left: auto !important;
+  padding: 4.5em 2.5em 2.5em 2.5em !important;
+  position: relative;
+  right: auto !important;
+  text-align: center;
+  top: auto !important;
+  width: 100% !important;
+}
+/* line 78, ../sass/style-medium.scss */
+.spotlight .goto-next {
+  display: none;
+}
+/* line 81, ../sass/style-medium.scss */
+.spotlight .you {
+  background-color: transparent;
+  height: 100% !important;
+  width: 100%;
+  margin: 0 auto;
+  border: 0;
+  position: absolute;
+  top: 0 !important;
+}
+/* line 89, ../sass/style-medium.scss */
+.spotlight .you img {
+  max-width: 480px;
+  width: 50%;
+  border: 0.5em solid;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+}
+
+/* Wrapper */
+/* line 102, ../sass/style-medium.scss */
+.wrapper {
+  padding: 4.5em 2.5em 2.5em 2.5em;
+}
+
+/* Banner */
+/* line 108, ../sass/style-medium.scss */
+#banner {
+  background-attachment: scroll;
+}
+/* line 111, ../sass/style-medium.scss */
+#banner .goto-next {
+  height: 7em;
+}
+/* line 115, ../sass/style-medium.scss */
+#banner .content {
+  padding: 9em 0;
+  text-align: center;
+}
+/* line 119, ../sass/style-medium.scss */
+#banner .content header {
+  display: block;
+  margin: 0 0 2em 0;
+  text-align: center;
+}
+/* line 125, ../sass/style-medium.scss */
+#banner .content .image {
+  margin: 0;
+}
+
+/* Footer */
+/* line 133, ../sass/style-medium.scss */
+#footer {
+  padding: 4.5em 0;
+}
